@@ -7,6 +7,16 @@
 //
 
 #import "SSrecorridoViewController.h"
+#import "SSdatosHermandadViewController.h"
+#import "SSdiasTableViewController.h"
+#import "SShermandadesTableViewController.h"
+#import "SSrecorridoViewController.h"
+#import "Dias.h"
+#import "Hermandades.h"
+#import "Recorrido.h"
+#import "SSAppDelegate.h"
+
+#import <CoreData/CoreData.h>
 
 @interface SSrecorridoViewController ()
 
@@ -26,8 +36,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
+    if (self.recorridoo != nil) {
+        self.lugar.text = self.recorridoo.lugar;
+        self.hora.text = self.recorridoo.hora;        
+
+    }}
 
 - (void)didReceiveMemoryWarning
 {

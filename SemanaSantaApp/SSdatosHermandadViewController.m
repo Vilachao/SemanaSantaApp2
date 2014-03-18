@@ -9,6 +9,7 @@
 #import "SSdatosHermandadViewController.h"
 #import "SSdiasTableViewController.h"
 #import "SShermandadesTableViewController.h"
+#import "SSrecorridoViewController.h"
 #import "Dias.h"
 #import "Hermandades.h"
 #import "SSAppDelegate.h"
@@ -48,6 +49,17 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    
+//    if ([segue.identifier isEqualToString:@"recorrido"]) {
+//        UITableViewCell *cell = sender;
+//
+//        
+//        SSrecorridoViewController *recorrido = segue.destinationViewController;
+//        recorrido.lugar = hermandad;
+//    }
 }
 
 

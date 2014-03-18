@@ -251,8 +251,13 @@
         corona2.hora = @"23:47";
         corona2.lugar = @"Entrada";
 
+        corona1.hermandadesD = laCorona;
+        corona2.hermandadesD  =laCorona;
         
+        [laCorona addRecorridosObject:corona1];
+        [laCorona addRecorridosObject:corona2];
     
+        
     NSError *error;
     if (![context save:&error]) {
         NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
@@ -274,7 +279,19 @@
         }
 
     }
-        
+   
+        NSFetchRequest *fetchRequest1 = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity1 = [NSEntityDescription entityForName:@"Recorrido"
+                                                  inManagedObjectContext:context];
+        [fetchRequest1 setEntity:entity1];
+        NSArray *fetchedObjects1 = [context executeFetchRequest:fetchRequest1 error:&error];
+        for (Recorrido *info in fetchedObjects1) {
+            
+            NSLog(@" %@ Lugar y hora %@", info.lugar, info.hora);
+            NSLog(@" Verificar hermandad del recorrido: %@", info.hermandadesD.nombreH);
+            
+            
+        }
         
 }
 
